@@ -2,7 +2,7 @@ export const mainContainer = document.createElement('div');
 mainContainer.classList.add('container', 'row', 'mx-auto', 'px-3', 'py-5');
 mainContainer.innerHTML = `
 <!--app body container-->
-   <!-- <div class="container row mx-auto px-3 py-5"> -->
+   <!-- <div id="main-container" class="container row mx-auto px-3 py-5"> -->
       <!--app container-->
       <div id="app-container" class="container-fluid row mx-auto bg-white border border-1 
       shadow d-flex justify-content-center">

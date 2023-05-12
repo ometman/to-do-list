@@ -26,7 +26,7 @@ window.onload = () => {
     const i = taskIndex;
     const taskContainer = document.querySelector('#task-container');
     taskContainer.innerHTML
-+= ` <!--check input col-->
+      += ` <!--check input col-->
 <div class="col-1">
   <!-- task selection form-->
   <form action="task-select-form" class="task-select-form d-flex justify-content-start align-items-center">
