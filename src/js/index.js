@@ -6,18 +6,7 @@ import * as bootstrap from 'bootstrap';
 import { mainContainer } from '../modules/container.js';
 
 window.onload = () => {
-  const tasksArray = [
-    {
-      index: 1,
-      taskDescription: 'wash the dishes',
-      completed: true,
-    },
-    {
-      index: 2,
-      taskDescription: 'complete To Do list project',
-      completed: false,
-    },
-  ];
+  const tasksArray = [];
 
   const body = document.querySelector('body');
   body.appendChild(mainContainer);
