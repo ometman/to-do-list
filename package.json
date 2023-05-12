@@ -345,7 +345,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack serve --mode development --open"
+    "start": "webpack serve --mode development --open",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
