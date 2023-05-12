@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     static: path.resolve(__dirname, 'dist'),
     port: 8080,
-    hot: true
+    hot: true,
   },
   output: {
     filename: '[name].js',
@@ -25,12 +25,11 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
-            ]
+              ['@babel/preset-env', { targets: 'defaults' }],
+            ],
           },
 
-
-        }
+        },
       },
       {
         test: /\.css$/i,
@@ -40,31 +39,31 @@ module.exports = {
         test: /\.(scss)$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: () => [
-                  require('autoprefixer')
-                ]
-              }
-            }
+                  // require('autoprefixer'),
+                ],
+              },
+            },
           },
           {
-            loader: 'sass-loader'
-          }
-        ]
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-    ]
+    ],
   },
 
   plugins: [
