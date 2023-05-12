@@ -1,0 +1,31 @@
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
+// Import bootstrap icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
+}
+
+.bottom-container {
+  background-color: #f6f6f6;
+}
+
+#app-title {
+  font-size: 1.2rem;
+}
+
+#app-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#task-entry,
+#task-select {
+  display: none;
+}
+
+.task-input::placeholder {
+  font-style: italic;
+}
