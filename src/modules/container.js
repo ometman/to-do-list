@@ -1,8 +1,8 @@
+
 export const mainContainer = document.createElement('div');
 mainContainer.classList.add('container', 'row', 'mx-auto', 'px-3', 'py-5');
 mainContainer.innerHTML = `
 <!--app body container-->
-   <!-- <div id="main-container" class="container row mx-auto px-3 py-5"> -->
       <!--app container-->
       <div id="app-container" class="container-fluid row mx-auto bg-white border border-1 
       shadow d-flex justify-content-center">
@@ -18,9 +18,9 @@ mainContainer.innerHTML = `
         <hr>
         <!--input row-->
           <!--form for task entry -->
-          <form action="new-task-form" class="row p-2 mb-1 pt-0 new-task-form d-flex justify-content-between align-items-center">
+          <form id="new-task-form" class="row p-2 mb-1 pt-0 new-task-form d-flex justify-content-between align-items-center">
             <label id="task-entry" for="task-input"> Add a task here</label>
-            <input id="task-input" class="col-10 border-0 task-input" type="text" value="" placeholder="Add you list..."/>
+            <input id="task-input" class="col-10 border-0 task-input" type="text" placeholder="Add you list..."/>
             <i id="task-input-return" class="bi bi-arrow-return-left btn btn btn-sm col-1"></i>
           </form>
         <hr>
@@ -35,7 +35,6 @@ mainContainer.innerHTML = `
             <button class="btn mx-auto">Clear all completed</button>
           </div>
         </div>
-      </div> 
-   <!-- </div> -->`;
+      </div> `;
 
 export { mainContainer as default };
