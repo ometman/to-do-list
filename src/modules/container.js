@@ -25,7 +25,7 @@ mainContainer.innerHTML = `
           </form>
         <hr>
         <!--listing tasks cols row-->
-        <div id="task-container" class="row px-2 ms-0 me-0">
+        <div id="task-container" class="task-container row px-0 ms-0 me-0">
           <!--listing tasks here -->
         </div>
         <!--bottom container for clearing all selected lists-->

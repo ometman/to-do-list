@@ -1,9 +1,7 @@
 import { TasksClass } from './tasksClass.js';
 // import { launchDom } from './theDOM.js';
 
-
-
-// add new task by click event 
+// add new task by click event
 export const addNewTask = () => {
   //  get the form from the main content
   const newTaskForm = document.querySelector('#new-task-form');
@@ -12,15 +10,15 @@ export const addNewTask = () => {
     e.preventDefault();
 
     const taskItem = document.querySelector('#task-input').value;
-    const todoTasks = new TasksClass('', taskItem, '');
+    if (taskItem !== '') {
+      const todoTasks = new TasksClass('', taskItem, '');
 
-    // the add function from the task class
-    todoTasks.addTask();
-    todoTasks.displayAllTasks();
-    newTaskForm.reset();
+      // the add function from the task class
+      todoTasks.addTask();
+      todoTasks.displayAllTasks();
+      newTaskForm.reset();
+    }
   });
-
-
 
   // const awesomeBooksIn = new BooksClass();
   // if (awesomeBooksIn.getLocalStorage().length > 0) {
@@ -31,6 +29,4 @@ export const addNewTask = () => {
   // } // get store books or show message if empty
 };
 
-
 export { addNewTask as default };
-
