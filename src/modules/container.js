@@ -1,4 +1,3 @@
-
 export const mainContainer = document.createElement('div');
 mainContainer.classList.add('container', 'row', 'mx-auto', 'px-3', 'py-5');
 mainContainer.innerHTML = `

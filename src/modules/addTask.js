@@ -11,22 +11,13 @@ export const addNewTask = () => {
 
     const taskItem = document.querySelector('#task-input').value;
     if (taskItem !== '') {
-      const todoTasks = new TasksClass('', taskItem, '');
-
+      const todoTasks = new TasksClass();
       // the add function from the task class
-      todoTasks.addTask();
+      todoTasks.addTask(taskItem);
       todoTasks.displayAllTasks();
       newTaskForm.reset();
     }
   });
-
-  // const awesomeBooksIn = new BooksClass();
-  // if (awesomeBooksIn.getLocalStorage().length > 0) {
-  //   awesomeBooksIn.showAllBooks();
-  // } else {
-  //   const showBks = document.querySelector('#show-bks');
-  //   showBks.textContent = 'No books currrently added';
-  // } // get store books or show message if empty
 };
 
 export { addNewTask as default };

@@ -14,13 +14,12 @@ export class TasksClass {
 
     //  add task method: declaring the object variables and assign the values to them
     //  the task class is assigned as an object property of the class
-    addTask = () => {
+    addTask = (tasktext) => {
       const theIndex = this.taskCollection.length + 1;
-      const { index } = this;
-      const { description } = this;
-      const { completion } = this;
+      this.taskCollection.completion = this;
+      this.taskCollection.description = this;
       this.taskCollection.push({
-        index: theIndex, description, completion: false,
+        index: theIndex, description: tasktext, completion: false
       });
       localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
     }
@@ -29,11 +28,9 @@ export class TasksClass {
       const taskContainer = document.querySelector('#task-container');
       const displayContainer = document.createElement('div');
       displayContainer.classList = 'display-container, row px-2 ms-0 me-0';
-      displayContainer.innerHTML = '';
-      const tCollection = this.taskCollection;
-      tCollection.forEach((task, taskIndex) => {
-        const i = taskIndex;
-        displayContainer.innerHTML += ` 
+      displayContainer.innerHTML = '';      
+      for (let i = 0; i < this.taskCollection.length; i += 1) {
+        displayContainer.innerHTML = ` 
             <!--check input col-->
             <div class="col-1">
             <!-- task selection form-->
@@ -48,38 +45,36 @@ export class TasksClass {
             </div>
             <!--move and drop-drop-down btn-->
             <i id="remove-btn"class="remove-btn bi bi-three-dots-vertical btn btn-sm col-1"></i>`;
-            taskContainer.appendChild(displayContainer);
+        taskContainer.appendChild(displayContainer);
 
-            const removeTaskArr = [];
-            const removeBtns = document.querySelectorAll('.display-container');
-            
-            removeTaskArr.push(removeBtns)
-            console.log(removeTaskArr);
-      });
-      
-    
+       // const removeTaskArr = [];
+        
+        
+       // removeTaskArr.push(removeBtns);
+      };
+      const removeBtns = document.querySelectorAll('.display-container');
+      console.log(removeBtns)
     } // show all task entries
 
     removeTask(removeBtns) {
-        removeBtns.forEach((btn) => {
-          btn.addEventListener('click', () => {
-            console.log('removetask')
-            this.taskCollection.splice(btn.getAttribute('id'), 1);
-            localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
-            this.displayAllBooks();
-          });
+      removeBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          this.taskCollection.splice(btn.getAttribute('id'), 1);
+          localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+          this.displayAllBooks();
         });
-      }// removeBook
+      });
+    }// removeBook
 
-   // removeTask(theIndex) {
-     // console.log('ready to remove');
-    
-      //   tc.sort((taskItem1, taskItem2) => taskItem1.theIndex - taskItem2.theIndex);
-      //   tc.forEach((taskItem, taskItemIndex) => {
-      //     taskItem.theIndex = taskItemIndex;
-      //   });
-   //   localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
-   // }
+    // removeTask(theIndex) {
+    // console.log('ready to remove');
+
+    //   tc.sort((taskItem1, taskItem2) => taskItem1.theIndex - taskItem2.theIndex);
+    //   tc.forEach((taskItem, taskItemIndex) => {
+    //     taskItem.theIndex = taskItemIndex;
+    //   });
+    //   localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+    // }
 
     getLocalStorage = () => this.taskCollection;
     // access and show local storage data
