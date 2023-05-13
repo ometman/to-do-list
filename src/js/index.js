@@ -5,19 +5,17 @@ import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap';
 
 // import { TasksClass } from '../modules/tasksClass.js'
-import { tasksList } from '../modules/showTasks.js';
-import { launchDOM } from '../modules/theDOM';
-
-// import { addNewTask } from '../modules/addRemoveTask.js';
+import { displayTasks } from '../modules/showTasks.js';
+import { launchDOM } from '../modules/theDOM.js';
+import { addNewTask } from '../modules/addRemoveTask.js';
 
 
 
 window.onload = () => {
 
   launchDOM();
-  tasksList();
-
-  // addNewTask();
+  displayTasks();
+  addNewTask();
 
 
 };

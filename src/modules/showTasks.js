@@ -1,7 +1,8 @@
 import { TasksClass } from './tasksClass.js';
 
-export const tasksList = () => {
+export const displayTasks = () => {
+  
   const showTasks = new TasksClass();
   showTasks.displayAllTasks();
 }
-export default tasksList;
+export default displayTasks;
