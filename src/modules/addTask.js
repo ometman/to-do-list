@@ -1,5 +1,4 @@
 import { TasksClass } from './tasksClass.js';
-// import { launchDom } from './theDOM.js';
 
 // add new task by click event
 export const addNewTask = () => {
@@ -9,12 +8,13 @@ export const addNewTask = () => {
   newTask.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const taskItem = document.querySelector('#task-input').value;
-    if (taskItem !== '') {
-      const todoTasks = new TasksClass();
+    const taskItem = document.querySelector('#task-input');
+    if (taskItem.value !== '') {
+      const taskText = taskItem.value;
       // the add function from the task class
-      todoTasks.addTask(taskItem);
-      todoTasks.displayAllTasks();
+      const todoTasks = new TasksClass();
+      todoTasks.addTask(taskText);
+      todoTasks.showAddedTasks();
       newTaskForm.reset();
     }
   });

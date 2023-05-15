@@ -9,12 +9,30 @@ import { displayTasks } from '../modules/showTasks.js';
 import { launchDOM } from '../modules/theDOM.js';
 import { addNewTask } from '../modules/addTask.js';
 // import { TasksClass } from '../modules/tasksClass.js';
-// import { removeTask } from '../modules/removeTask.js';
+import { removeTask } from '../modules/removeTask.js';
 
 window.onload = () => {
   launchDOM();
+
+  const refreshPage = document.querySelector('#refresh-page-btn');
+  refreshPage.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.reload();
+  });
+
   displayTasks();
+
+  const changeIcon = document.querySelectorAll('.remove-btn');
+
+  changeIcon.forEach((value) => {
+    value.addEventListener('click', (e) => {
+      e.preventDefault();
+      value.classList.toggle('bi-trash');
+    });
+  });
+
   addNewTask();
+  removeTask();
 
   // event listners the displayed task DOM elements
   // const agent = document.querySelectorAll('.task-container')
@@ -40,6 +58,8 @@ window.onload = () => {
   //     editTask(taskStore, parent);
   //   }
   // });
-};
+}
+
+
 
 export { bootstrap as default };

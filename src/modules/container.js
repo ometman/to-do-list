@@ -12,7 +12,7 @@ mainContainer.innerHTML = `
             <h1 id="app-title">Today's To Do</h1>
           </div>
           <!--refresh btn col-->
-            <i class="bi bi-arrow-repeat btn btn-sm  col-1"></i> 
+            <i id="refresh-page-btn" class="bi bi-arrow-repeat btn btn-sm  col-1"></i> 
         </div>
         <hr>
         <!--input row-->
