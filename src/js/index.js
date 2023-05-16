@@ -8,12 +8,14 @@ import * as bootstrap from 'bootstrap';
 import { displayTasks } from '../modules/showTasks.js';
 import { launchDOM } from '../modules/theDOM.js';
 import { addNewTask } from '../modules/addTask.js';
-// import { TasksClass } from '../modules/tasksClass.js';
+import { TasksClass } from '../modules/tasksClass.js';
 import { removeTask } from '../modules/removeTask.js';
+import { changeIcon } from '../modules/changeIcon.js'
 
 window.onload = () => {
   launchDOM();
 
+  // refresh page by refresh icon btn
   const refreshPage = document.querySelector('#refresh-page-btn');
   refreshPage.addEventListener('click', (e) => {
     e.preventDefault();
@@ -22,32 +24,18 @@ window.onload = () => {
 
   displayTasks();
 
-  const changeIcon = document.querySelectorAll('.remove-btn');
-
-  changeIcon.forEach((value) => {
-    value.addEventListener('click', (e) => {
-      e.preventDefault();
-      value.classList.toggle('bi-trash');
-    });
-  });
+  // // change dot icons btn to type trash btn
+  // const changeIcon = document.querySelectorAll('.remove-btn');
+  // changeIcon.forEach((value) => {
+  //   value.addEventListener('mousedown', (e) => {
+  //     e.preventDefault();
+  //     value.classList.toggle('bi-trash');
+  //   });
+  // });
 
   addNewTask();
-  removeTask();
-
-  // event listners the displayed task DOM elements
-  // const agent = document.querySelectorAll('.task-container')
-  // const agentArr = [];
-  // agentArr.push(agent);
-  // console.log(agentArr)
-  // agent.addEventListener('click', (ev) => {
-
-  // task removal
-  //  if (agent.classList.contains('task-container')) {
-  // target.classList.toggle = 'remove-btn bi bi-trash btn btn-sm col-1';
-  //    console.log(agent);
-  // call the method on the target
-  // removeTask(TasksClass, target.id);
-  // }
+  // removeTask();
+  changeIcon();
 
   // task editing
   // if (target.classList.contains('task-item')) {

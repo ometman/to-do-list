@@ -11,10 +11,10 @@ export const addNewTask = () => {
     const taskItem = document.querySelector('#task-input');
     if (taskItem.value !== '') {
       const taskText = taskItem.value;
-      // the add function from the task class
+      // the add function from the task class, call reload at addTask before reset from
+      // no need for displayAllTasks() here
       const todoTasks = new TasksClass();
       todoTasks.addTask(taskText);
-      todoTasks.showAddedTasks();
       newTaskForm.reset();
     }
   });
