@@ -4,7 +4,7 @@ export const changeIcon = () => {
   const theIcons = document.querySelectorAll('.remove-btn');
 
   theIcons.forEach((value) => {
-    value.addEventListener('click', (e) => {
+    value.addEventListener('mouseover', (e) => {
       e.preventDefault();
       value.classList.toggle('bi-trash');
     });

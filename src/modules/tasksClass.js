@@ -15,11 +15,13 @@ export class TasksClass {
   //  add task method: declaring the object variables and assign the values to them
   //  the task class is assigned as an object property of the class. Do page reload after adding.
   addTask = (taskText) => {
-    const theIndex = this.taskCollection.length + 1;
-    this.taskCollection.push({
+    const tC = this.taskCollection;
+    const theIndex = tC.length + 1;
+    tC.push({
       taskIndex: theIndex, taskDescription: taskText, taskCompletion: false,
     });
-    localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+    tC.sort((task1, task2) => task1.taskIndex - task2.taskIndex);
+    localStorage.setItem('taskList', JSON.stringify(tC));
     window.location.reload();
   }
 
@@ -38,7 +40,7 @@ export class TasksClass {
       <!-- task selection form-->
       <form action="task-select-form" class="task-select-form d-flex justify-content-start align-items-center">
       <label id="task-select" for="task-select-input"> Select a task</label>
-      <input id="task-select-input" class="form-check-input task-select-input" type="checkbox"/>
+      <input id="task-select-input" class="form-check-input task-select-input" disabled="false" type="checkbox"/>
       </form>
       </div>
       <!--id task list-->
@@ -49,28 +51,31 @@ export class TasksClass {
       <i id="remove-btn"class="remove-btn bi bi-three-dots-vertical btn btn-sm col-1"></i>`;
 
       taskContainer.appendChild(displayContainer);
-
-      const dcArray = [displayContainer];
-      dcArray.forEach((dcEl) => {
-        dcEl.addEventListener('click', () => {
-          const targetIndex = dcEl.id;
-          this.removeTask(targetIndex);
-        });
-      });
     });
-  } // show tasks added
 
-  removeTask = (targetIndex) => {
+  } // show all tasks
+
+  taskRemover = (btnIndex) => {
     const tC = this.taskCollection;
-    console.log(targetIndex)
-    tC.splice(targetIndex, 1);
-    console.log(tC);
-    // tC.sort((taskItem1, taskItem2) => taskItem1.theIndex - taskItem2.theIndex);
-    // tC.forEach((taskItem, taskItemIndex) => {
-    // taskItem.theIndex = taskItemIndex;
-    // });
+    // remove by splicing
+    tC.splice(btnIndex, 1);
+    // rearrange by sorting using their index
+    tC.sort((task1, task2) => task1.taskIndex - task2.taskIndex);
+    // reassign task index by iterations
+    tC.forEach((taskItem, taskItemIndex) => {
+      taskItem.taskIndex = taskItemIndex + 1;
+    });
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+    window.location.reload();
   }
+
+//   taskEditor(elIndex, newTaskDescription) {
+//    const tC = this.taskCollection;
+//    console.log('ready to editor')
+//   tC[elIndex].taskDescription = newTaskDescription;
+//   localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+//  window.location.reload();
+//   }
 
   getLocalStorage = () => this.taskCollection;
   // access and show local storage data
