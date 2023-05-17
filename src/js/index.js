@@ -22,6 +22,7 @@ window.onload = () => {
     window.location.reload();
   });
 
+  // display tasks
   displayTasks();
 
   // task removal
@@ -31,7 +32,9 @@ window.onload = () => {
       removeTask(btnIndex);
     });
   });
+  // editing tasking
   editTask();
+  // adding new task
   addNewTask();
 
   changeIcon();

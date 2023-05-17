@@ -10,10 +10,3 @@ export const removeTask = (btnIndex) => {
 };
 
 export default removeTask;
-
-// export const removeTask = (taskCollection, theIndex) => {
-//   taskCollection.removeTask(theIndex);
-//   displayTasks(TasksClass);
-// };
-
-// export default removeTask;

@@ -2,19 +2,23 @@ import { TasksClass } from './tasksClass.js';
 
 // edit new task by click event
 export const editTask = () => {
-  //  get the form from the main content
-  const taskItem = document.querySelector('#task-input');
+  //  get the elements
   const editElement = document.querySelectorAll('.task-text');
+  const editTask = new TasksClass();
+  // get index and text content by iterating
   editElement.forEach((el, elIndex) => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-     // const newTaskDescription = taskItem.value;
-      taskItem.value = el.textContent;
-      const editedTask = new TasksClass();
-      editedTask.taskEditor(elIndex, newTaskDescription)
-    }) 
+    // functions for editing
+    const editContent = () => el.setAttribute('contenteditable', 'true');
+    const taskUpdate1 = () => { 
+      const taskItemInput = el.innerText;
+      editTask.taskEditor(elIndex, taskItemInput); 
+    };
+    const taskUpdate2 = () => el.setAttribute('contenteditable', 'true');
+    // events 
+    el.addEventListener('click', editContent, false);
+    el.addEventListener('input', taskUpdate1, false);
+    el.addEventListener('keydown', taskUpdate2, false);
   });
-  document.querySelector('#new-task-form').reset();
 };
 
 export { editTask as default };
