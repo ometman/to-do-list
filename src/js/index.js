@@ -6,15 +6,12 @@ import * as bootstrap from 'bootstrap';
 
 // import { TasksClass } from '../modules/tasksClass.js'
 import { displayTasks } from '../modules/showTasks.js';
-import { launchDOM } from '../modules/theDOM.js';
 import { addNewTask } from '../modules/addTask.js';
 import { removeTask } from '../modules/removeTask.js';
 import { changeIcon } from '../modules/changeIcon.js';
 import { editTask } from '../modules/editTask.js';
 
 window.onload = () => {
-  launchDOM();
-
   // refresh page by refresh icon btn
   const refreshPage = document.querySelector('#refresh-page-btn');
   refreshPage.addEventListener('click', (e) => {
