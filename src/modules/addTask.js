@@ -1,5 +1,3 @@
-import { keyBy } from 'lodash';
-import { even } from 'prelude-ls';
 import { TasksClass } from './tasksClass.js';
 
 // add new task by click event

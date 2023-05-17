@@ -52,7 +52,6 @@ export class TasksClass {
 
       taskContainer.appendChild(displayContainer);
     });
-
   } // show all tasks
 
   taskRemover = (btnIndex) => {
@@ -70,9 +69,9 @@ export class TasksClass {
   }
 
   taskEditor(elIndex, taskItemInput) {
-   const tC = this.taskCollection;
-  tC[elIndex].taskDescription = taskItemInput;
-  localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+    const tC = this.taskCollection;
+    tC[elIndex].taskDescription = taskItemInput;
+    localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
   }
 
   getLocalStorage = () => this.taskCollection;

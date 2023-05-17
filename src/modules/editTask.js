@@ -9,12 +9,12 @@ export const editTask = () => {
   editElement.forEach((el, elIndex) => {
     // functions for editing
     const editContent = () => el.setAttribute('contenteditable', 'true');
-    const taskUpdate1 = () => { 
+    const taskUpdate1 = () => {
       const taskItemInput = el.innerText;
-      editTask.taskEditor(elIndex, taskItemInput); 
+      editTask.taskEditor(elIndex, taskItemInput);
     };
     const taskUpdate2 = () => el.setAttribute('contenteditable', 'true');
-    // events 
+    // events
     el.addEventListener('click', editContent, false);
     el.addEventListener('input', taskUpdate1, false);
     el.addEventListener('keydown', taskUpdate2, false);

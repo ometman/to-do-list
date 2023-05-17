@@ -9,7 +9,7 @@ import { displayTasks } from '../modules/showTasks.js';
 import { launchDOM } from '../modules/theDOM.js';
 import { addNewTask } from '../modules/addTask.js';
 import { removeTask } from '../modules/removeTask.js';
-import { changeIcon } from '../modules/changeIcon.js'
+import { changeIcon } from '../modules/changeIcon.js';
 import { editTask } from '../modules/editTask.js';
 
 window.onload = () => {
