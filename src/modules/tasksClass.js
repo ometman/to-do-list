@@ -81,10 +81,9 @@ export class TasksClass {
   } // task is marked complete
 
   clearCompletedTask = (clearChecks) => {
-    const tC = this.taskCollection;
-    if (tC.taskCompletion === true) {
-      tC.taskCompletion = clearChecks;
-    }
+    let tC = this.taskCollection;
+    tC = tC.filter((value) => value.taskCompletion === true);
+    tC.taskCompletion = clearChecks;
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
   } // task is marked complete
 
