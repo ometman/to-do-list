@@ -10,6 +10,8 @@ import { addNewTask } from '../modules/addTask.js';
 import { removeTask } from '../modules/removeTask.js';
 import { changeIcon } from '../modules/changeIcon.js';
 import { editTask } from '../modules/editTask.js';
+import { markComplete } from '../modules/markCompleted.js';
+import { clearComplete } from '../modules/clearCompleted.js';
 
 window.onload = () => {
   // refresh page by refresh icon btn
@@ -33,7 +35,11 @@ window.onload = () => {
   editTask();
   // adding new task
   addNewTask();
-
+  // complete task
+  markComplete();
+  // clear complete task
+  clearComplete();
+  // change icon on hover
   changeIcon();
 };
 

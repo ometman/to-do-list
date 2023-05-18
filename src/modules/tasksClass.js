@@ -72,7 +72,21 @@ export class TasksClass {
     const tC = this.taskCollection;
     tC[elIndex].taskDescription = taskItemInput;
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
-  }
+  } // edit task
+
+  taskCompleted = (theElIndex, taskBoxChecked) => {
+    const tC = this.taskCollection;
+    tC[theElIndex].taskCompletion = taskBoxChecked;
+    localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+  } // task is marked complete
+
+  clearCompletedTask = (clearChecks) => {
+    const tC = this.taskCollection;
+    if (tC.taskCompletion === true) {
+      tC.taskCompletion = clearChecks;
+    }
+    localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+  } // task is marked complete
 
   getLocalStorage = () => this.taskCollection;
   // access and show local storage data
