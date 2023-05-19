@@ -5,19 +5,19 @@ export const markComplete = () => {
   //  get the elements
   const taskBoxEls = document.querySelectorAll('.task-select-input');
   const taskStatus = new TasksClass();
+  let taskBoxValue = true;
   // get index and checkbox value by iterating
   taskBoxEls.forEach((theEl, theElIndex) => {
-    // functions to execute when a task checkbox changes
-    const checkTaskElements = () => {
-      const taskBoxChecked = theEl.checked;
-      // const filteredTaskBoxEls = theEl.filter((a) => a.checked === true);
-      if (taskBoxChecked === true) {
-        taskStatus.taskCompleted(theElIndex, taskBoxChecked);
+    theEl.addEventListener('change', () => {
+      if (theEl.checked) {
+        taskBoxValue = true;
       }
-    };
-    // events
-    theEl.addEventListener('change', checkTaskElements, false);
-  });
+      if (!theEl.checked) {
+        taskBoxValue = false;
+      }
+      taskStatus.taskCompleted(theElIndex, taskBoxValue);
+    })
+  });  
 };
 
 export { markComplete as default };

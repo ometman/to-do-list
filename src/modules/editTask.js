@@ -8,7 +8,10 @@ export const editTask = () => {
   // get index and text content by iterating
   editElement.forEach((el, elIndex) => {
     // functions for editing
-    const editContent = () => el.setAttribute('contenteditable', 'true');
+    const editContent = () => {
+      el.setAttribute('contenteditable', 'true');
+      el.style.backgroundColor = '#ffffcb';
+    };
     const taskUpdate1 = () => {
       const taskItemInput = el.innerText;
       editTask.taskEditor(elIndex, taskItemInput);

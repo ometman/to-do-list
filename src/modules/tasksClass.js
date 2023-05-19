@@ -14,7 +14,7 @@ export class TasksClass {
 
   //  add task method: declaring the object variables and assign the values to them
   //  the task class is assigned as an object property of the class. Do page reload after adding.
-  addTask = (taskText) => {
+  addATask = (taskText) => {
     const tC = this.taskCollection;
     const theIndex = tC.length + 1;
     tC.push({
@@ -22,7 +22,6 @@ export class TasksClass {
     });
     tC.sort((task1, task2) => task1.taskIndex - task2.taskIndex);
     localStorage.setItem('taskList', JSON.stringify(tC));
-    window.location.reload();
   }
 
   displayAllTasks = () => {
@@ -74,17 +73,23 @@ export class TasksClass {
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
   } // edit task
 
-  taskCompleted = (theElIndex, taskBoxChecked) => {
+  taskCompleted = (theElIndex, taskBoxValue) => {
     const tC = this.taskCollection;
-    tC[theElIndex].taskCompletion = taskBoxChecked;
+    tC[theElIndex].taskCompletion = taskBoxValue;
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
   } // task is marked complete
 
-  clearCompletedTask = (clearChecks) => {
-    let tC = this.taskCollection;
-    tC = tC.filter((value) => value.taskCompletion === true);
-    tC.taskCompletion = clearChecks;
-    localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
+  clearCompletedTask = (theEl, theElIndex) => {
+    const tC = this.taskCollection;
+    tC.filter((task) => task.taskCompletion === false);
+    tC.splice(theElIndex, 1);
+    // rearrange by sorting using their index
+    tC.sort((task1, task2) => task1.taskIndex - task2.taskIndex);
+    // reassign task index by iterations
+    tC.forEach((taskItem, taskItemIndex) => {
+      taskItem.taskIndex = taskItemIndex + 1;
+    });
+    localStorage.setItem('taskList', JSON.stringify(tC));
   } // task is marked complete
 
   getLocalStorage = () => this.taskCollection;

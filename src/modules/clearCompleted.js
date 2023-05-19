@@ -7,19 +7,13 @@ export const clearComplete = () => {
   const taskBoxEls = document.querySelectorAll('.task-select-input');
   const taskStatus = new TasksClass();
   // get index and checkbox value by iterating
-  taskBoxEls.forEach((theEl) => {
-    // functions to execute when a task checkbox changes
-    const clearCompleted = () => {
-      // clear all check marks
-      theEl.checked = theEl.unchecked;
-      const clearChecks = theEl.checked;
-      // parse the index and false status to array
-      if (clearChecks === false) {
-        taskStatus.clearCompletedTask(clearChecks);
+  clearCompletedTask.addEventListener('click', () => {
+    taskBoxEls.forEach((theEl) => {
+      if (theEl.checked) {
+        theEl.checked = theEl.unchecked;
+        taskStatus.clearCompletedTask();
       }
-    };
-    // events
-    clearCompletedTask.addEventListener('click', clearCompleted, false);
+    });
   });
 };
 
