@@ -1,5 +1,4 @@
 import { TasksClass } from './tasksClass.js';
-import { displayTasks } from './showTasks.js'
 
 // add new task by click event
 export const addNewTask = () => {
@@ -9,7 +8,7 @@ export const addNewTask = () => {
   const newTask = document.querySelector('#task-input-return');
   // using mouse click on btn
   newTask.addEventListener('click', (e) => {
-  //  e.preventDefault();
+    e.preventDefault();
 
     if (taskItem.value !== '') {
       const taskText = taskItem.value;
@@ -18,7 +17,7 @@ export const addNewTask = () => {
       const todoTasks = new TasksClass();
       todoTasks.addATask(taskText);
       window.location.reload();
-    //  displayTasks();
+      //  displayTasks();
       newTaskForm.reset();
     }
   });

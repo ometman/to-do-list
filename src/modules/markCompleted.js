@@ -16,8 +16,8 @@ export const markComplete = () => {
         taskBoxValue = false;
       }
       taskStatus.taskCompleted(theElIndex, taskBoxValue);
-    })
-  });  
+    });
+  });
 };
 
 export { markComplete as default };
