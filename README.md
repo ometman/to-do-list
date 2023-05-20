@@ -114,8 +114,11 @@ Clone this repository to your desired folder:
 
 ### Usage
 
-To run the project, execute the following command:
-- Open the index.html file using any local server (e.g. live server extension in VS Code)
+To run the project locally, execute the following command:
+- Run the following command;
+  - npm run server (You should see a success result)
+  - Now access the app on port 3000 by entering the following in your browser:
+  - http://localhost:3000
 
 ### Run tests
 

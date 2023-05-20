@@ -8,14 +8,17 @@ export const editTask = () => {
   // get index and text content by iterating
   editElement.forEach((el, elIndex) => {
     // functions for editing
-    const editContent = () => el.setAttribute('contenteditable', 'true');
+    const editContent = () => {
+      el.setAttribute('contenteditable', 'true');
+      el.style.backgroundColor = '#ffffcb';
+    };
     const taskUpdate1 = () => {
       const taskItemInput = el.innerText;
       editTask.taskEditor(elIndex, taskItemInput);
     };
     const taskUpdate2 = () => el.setAttribute('contenteditable', 'true');
     // events
-    el.addEventListener('click', editContent, false);
+    el.addEventListener('dblclick', editContent, false);
     el.addEventListener('input', taskUpdate1, false);
     el.addEventListener('keydown', taskUpdate2, false);
   });
