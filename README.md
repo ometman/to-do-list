@@ -1,4 +1,4 @@
-# TO-DO LIST APP: Ometman
+# TO-DO LIST: Ometman
 <a name="readme-top"></a>
 
 <div align="center">
