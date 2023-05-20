@@ -172,7 +172,7 @@ You can deploy this project using:
 - GitHub Pages from a specific branch (e.g. main). 
 - You can also used any cloud service like gcloud or Azure.
 - A deployed version can be found here:
-https://...
+[https://...](https://ometman.github.io/to-do-list)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,7 +189,7 @@ https://...
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Popup alert on deleting or adding a book**
+- **Popup alert on deleting or adding a tasl**
 - **Changing look and feel of buttons**
 - **Improved Aesthetics & Design**
 
