@@ -29,3 +29,7 @@ body {
 .task-input::placeholder {
   font-style: italic;
 }
+
+.form-check-input:checked {
+background-color: green;
+}

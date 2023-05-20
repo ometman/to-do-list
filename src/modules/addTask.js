@@ -1,4 +1,6 @@
 import { TasksClass } from './tasksClass.js';
+import { displayTasks } from './showTasks.js';
+import { retainCheck } from './taskStatus.js';
 
 // add new task by click event
 export const addNewTask = () => {
@@ -16,8 +18,8 @@ export const addNewTask = () => {
       // no need for displayAllTasks() here
       const todoTasks = new TasksClass();
       todoTasks.addATask(taskText);
-      window.location.reload();
-      //  displayTasks();
+      displayTasks();
+      retainCheck();
       newTaskForm.reset();
     }
   });

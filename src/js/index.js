@@ -12,6 +12,7 @@ import { changeIcon } from '../modules/changeIcon.js';
 import { editTask } from '../modules/editTask.js';
 import { markComplete } from '../modules/markCompleted.js';
 import { clearComplete } from '../modules/clearCompleted.js';
+import { retainCheck } from '../modules/taskStatus.js';
 
 window.onload = () => {
   // refresh page by refresh icon btn
@@ -23,6 +24,8 @@ window.onload = () => {
 
   // display tasks
   displayTasks();
+  // status 
+  retainCheck();
 
   // task removal
   const removeBtn = document.querySelectorAll('.remove-btn');
@@ -31,6 +34,9 @@ window.onload = () => {
       removeTask(btnIndex);
     });
   });
+
+
+
   // editing tasking
   editTask();
   // adding new task

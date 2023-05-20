@@ -26,13 +26,15 @@ export class TasksClass {
 
   displayAllTasks = () => {
     const tC = this.taskCollection;
+    // get the task container for iteration and declare it empty
+    const taskContainer = document.querySelector('#task-container');
+    taskContainer.innerHTML = '';
+    // now start loop - prevents duplication and single content scenio
     tC.forEach((tcTask, tcTaskIndex) => {
-      const i = tcTaskIndex;
-      const taskContainer = document.querySelector('#task-container');
       const displayContainer = document.createElement('div');
       displayContainer.classList = 'display-container, row px-2 ms-0 me-0';
-      displayContainer.id = i + 1;
-      displayContainer.innerHTML = '';
+      const i = tcTaskIndex;
+      // displayContainer.id = i + 1;
       displayContainer.innerHTML = ` 
       <!--check input col-->
       <div class="col-1">
@@ -48,7 +50,6 @@ export class TasksClass {
       </div>
       <!--move and drop-drop-down btn-->
       <i id="remove-btn"class="remove-btn bi bi-three-dots-vertical btn btn-sm col-1"></i>`;
-
       taskContainer.appendChild(displayContainer);
     });
   } // show all tasks
@@ -64,7 +65,6 @@ export class TasksClass {
       taskItem.taskIndex = taskItemIndex + 1;
     });
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
-    window.location.reload();
   }
 
   taskEditor(elIndex, taskItemInput) {
@@ -79,9 +79,9 @@ export class TasksClass {
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
   } // task is marked complete
 
-  clearCompletedTask = (theEl, theElIndex) => {
+  clearCompletedTask = (theElIndex, taskBoxValue) => {
     const tC = this.taskCollection;
-    tC.filter((task) => task.taskCompletion === false);
+    // tC.filter((task) => task.taskCompletion === false);
     tC.splice(theElIndex, 1);
     // rearrange by sorting using their index
     tC.sort((task1, task2) => task1.taskIndex - task2.taskIndex);
@@ -89,6 +89,7 @@ export class TasksClass {
     tC.forEach((taskItem, taskItemIndex) => {
       taskItem.taskIndex = taskItemIndex + 1;
     });
+    window.reload();
     localStorage.setItem('taskList', JSON.stringify(tC));
   } // task is marked complete
 
