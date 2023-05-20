@@ -35,8 +35,6 @@ window.onload = () => {
     });
   });
 
-
-
   // editing tasking
   editTask();
   // adding new task

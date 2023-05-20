@@ -79,7 +79,7 @@ export class TasksClass {
     localStorage.setItem('taskList', JSON.stringify(this.taskCollection));
   } // task is marked complete
 
-  clearCompletedTask = (theElIndex, taskBoxValue) => {
+  clearCompletedTask = (theElIndex) => {
     const tC = this.taskCollection;
     // tC.filter((task) => task.taskCompletion === false);
     tC.splice(theElIndex, 1);

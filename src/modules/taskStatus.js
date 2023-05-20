@@ -9,7 +9,7 @@ export const retainCheck = () => {
   taskEls.forEach((theEl, theElIndex) => {
     // theEl.checked = true;
     if (checkStatus.taskCollection[theElIndex].taskCompletion === true) {
-    theEl.checked = true;
+      theEl.checked = true;
     }
   });
 };
