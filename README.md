@@ -89,7 +89,7 @@ This project **To Do List** demonstrates the development of the minimalist desig
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Please a live demo coming soon.
+> You can access a live demo <a href="https://ometman.github.io/to-do-list/"> here</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
