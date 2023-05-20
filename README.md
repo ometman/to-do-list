@@ -10,7 +10,7 @@
 
 
 # 📗 Table of Contents
-- [To-Do List App: Ometman](#to-do-list-ometman)
+- [TO-DO LIST: Ometman](#to-do-list-ometman)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 To Do List: Ometman ](#-to-do-list-ometman-)
   - [🛠 Built With ](#-built-with-)
@@ -89,7 +89,7 @@ This project **To Do List** demonstrates the development of the minimalist desig
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> You can access a live demo <a href="https://ometman.github.io/to-do-list/"> here</a>
+> You can access a live demo <a href="https://ometman.github.io/to-do-list/dist"> here</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,7 +172,7 @@ You can deploy this project using:
 - GitHub Pages from a specific branch (e.g. main). 
 - You can also used any cloud service like gcloud or Azure.
 - A deployed version can be found here:
-[https://...](https://ometman.github.io/to-do-list)
+[https://...](https://ometman.github.io/to-do-list/dist)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,7 +189,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Popup alert on deleting or adding a tasl**
+- **Popup alert on deleting or adding a task**
 - **Changing look and feel of buttons**
 - **Improved Aesthetics & Design**
 
