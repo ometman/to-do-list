@@ -24,7 +24,7 @@ window.onload = () => {
 
   // display tasks
   displayTasks();
-  // status 
+  // status
   retainCheck();
 
   // task removal

@@ -89,7 +89,6 @@ export class TasksClass {
     tC.forEach((taskItem, taskItemIndex) => {
       taskItem.taskIndex = taskItemIndex + 1;
     });
-    window.reload();
     localStorage.setItem('taskList', JSON.stringify(tC));
   } // task is marked complete
 

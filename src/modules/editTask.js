@@ -18,7 +18,7 @@ export const editTask = () => {
     };
     const taskUpdate2 = () => el.setAttribute('contenteditable', 'true');
     // events
-    el.addEventListener('click', editContent, false);
+    el.addEventListener('dblclick', editContent, false);
     el.addEventListener('input', taskUpdate1, false);
     el.addEventListener('keydown', taskUpdate2, false);
   });
